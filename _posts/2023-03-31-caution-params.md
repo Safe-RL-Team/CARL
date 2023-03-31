@@ -266,7 +266,7 @@ R_{\gamma, \lambda_2}(A)=\sum_{i:r^i \leq v_{100-\gamma}(r)} r^i / N - \lambda_2
 $$
 
 
-in combination with an estimation of how far OOD the target environment lays. After the first adaptation training iteration, if the target environment is expected to be close to training domain, $$\lambda_2$$ could be increased and $$\gamma$$ set to $$0$$. If the target environment is expected to be further OOD, the $$\lambda_2$$ could be smaller and $$\gamma$$ could be increased.
+in combination with an estimation of how far OOD the target environment lays. After the first adaptation training iteration, if the target environment is expected to be close to training domain, $$\lambda_2$$ could be increased and $$\gamma$$ set to $$0$$. If the target environment is expected to be further OOD, $$\lambda_2$$ could be smaller and $$\gamma$$ could be increased.
 
 
 # References
