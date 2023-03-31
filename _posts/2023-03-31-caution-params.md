@@ -11,7 +11,7 @@ date: 2023-03-31
 
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/vids/adapt_state_1_1_it9.gif" width="200" height="200">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/vids/adapt_state_1_1_it9.gif" width="200" height="200">
   <figcaption>Figure 1. CARL State after adaptation.</figcaption>
    </p>
 </figure>
@@ -27,7 +27,7 @@ García and Fernández (2015) categorize the main tendencies in Safe RL. Apart f
 
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/context.png" alt="Figure2" class = "center">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/context.png" alt="Figure2" class = "center">
   <figcaption>Figure 2. Approaches for Safe RL (adapted: García and Fernández, 2015, p. 1440).</figcaption>
   </p>
 </figure>
@@ -118,7 +118,7 @@ During pretraining, a PETS agent is trained in several domains of the cartpole e
 <summary>Figure 3.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/pretrain_cat.png" alt="Figure3" class = "center" width = "522" height = "394">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/pretrain_cat.png" alt="Figure3" class = "center" width = "522" height = "394">
   <figcaption>Figure 3. Catastrophic events over pretraining phase training iterations.</figcaption>
   </p>
 </figure>
@@ -128,7 +128,7 @@ During pretraining, a PETS agent is trained in several domains of the cartpole e
 <summary>Figure 4.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/pretrain_r.png" alt="Figure4" class = "center" width = "522" height = "394">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/pretrain_r.png" alt="Figure4" class = "center" width = "522" height = "394">
   <figcaption>Figure 4. Returns over pretraining phase training iterations.</figcaption>
   </p>
 </figure>
@@ -137,9 +137,9 @@ During pretraining, a PETS agent is trained in several domains of the cartpole e
 
 <figure>
   <p style="text-align:center;">
-    <img src="https://M-Eberle.github.io/CARL/assets/docs/vids/pretraining_it0.gif" width="200" height="200">
-    <img src="https://M-Eberle.github.io/CARL/assets/docs/vids/pretraining_it4.gif" width="200" height="200">
-    <img src="https://M-Eberle.github.io/CARL/assets/docs/vids/pretraining_it19.gif" width="200" height="200">
+    <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/vids/pretraining_it0.gif" width="200" height="200">
+    <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/vids/pretraining_it4.gif" width="200" height="200">
+    <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/vids/pretraining_it19.gif" width="200" height="200">
   <figcaption>Figure 5. PETS during pretraining episodes 1, 5, and 20, respectively.</figcaption>
   </p>
 </figure>
@@ -154,7 +154,7 @@ For pole length $$td = 1$$, all CARL State versions achieve a higher reward than
 <summary>Figure 6.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/r1.png" alt="Figure6" class = "center">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/r1.png" alt="Figure6" class = "center">
   <figcaption>Figure 6. Returns over adaptation phase training iterations for pole length td = 1. Solid lines represent the maximum reward over iterations, dotted lines represent actual reward per iteration. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
@@ -165,7 +165,7 @@ For pole length $$td = 1.5$$, CARL Reward and CARL State start out with similar 
 <summary>Figure 7.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/r1_5.png" alt="Figure7" class = "center">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/r1_5.png" alt="Figure7" class = "center">
   <figcaption>Figure 7. Returns over adaptation phase training iterations for pole length td = 1.5. Solid lines represent the maximum reward over iterations, dotted lines represent actual reward per iteration. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
@@ -176,7 +176,7 @@ For pole length $$td = 2$$, all CARL Reward version start out with a lower rewar
 <summary>Figure 8.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/r2.png" alt="Figure8" class = "center">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/r2.png" alt="Figure8" class = "center">
   <figcaption>Figure 8. Returns over adaptation phase training iterations for pole length td = 2. Solid lines represent the maximum reward over iterations, dotted lines represent actual reward per iteration. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
@@ -185,7 +185,7 @@ For pole length $$td = 2$$, all CARL Reward version start out with a lower rewar
 Figure 9 shows an overall comparison of final maximum adaptation return for CARL versions. For a pole length $$td = 1$$, all versions show very high rewards. As expected, different caution parameters have a more different influence for further OOD pole lengths: For $$td = 1.5$$, within CARL Reward versions, the most cautious ($$\gamma = 70$$) has the highest return. For CARL State versions, all modifications of the original ($$\lambda_2 = 1$$) perform better than the original. Overall, higher $$\lambda_2$$ tend to have a higher return. For $$td = 2$$,  for CARL Reward and State, the most cautious versions ($$\gamma = 70$$ and $$\lambda_2 = 0.5$$) have the highest returns.
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/heat_r.png" alt="Figure9">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/heat_r.png" alt="Figure9">
   <figcaption>Figure 9. Maximum return for the final training episode during adaptation phase for all versions of CARL.</figcaption>
   </p>
 </figure>
@@ -196,7 +196,7 @@ For pole length $$td = 1$$, all CARL Reward versions cause a catastrophic event 
 <summary>Figure 10.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/cat1.png" alt="Figure10" class = "center">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/cat1.png" alt="Figure10" class = "center">
   <figcaption>Figure 10. Catastrophic events over adaptation phase training iterations for pole length td = 1. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
@@ -207,7 +207,7 @@ For pole length $$td = 1.5$$, all CARL version cause a catastrophic event in eve
 <summary>Figure 11.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/cat1_5.png" alt="Figure11" class = "center">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/cat1_5.png" alt="Figure11" class = "center">
   <figcaption>Figure 11. Catastrophic events over adaptation phase training iterations for pole length td = 1.5. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
@@ -218,7 +218,7 @@ For pole length $$td = 2$$, all CARL versions cause catastrophic events in each 
 <summary>Figure 12.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/cat2.png" alt="Figure12" class = "center">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/cat2.png" alt="Figure12" class = "center">
   <figcaption>Figure 12. Catastrophic events over adaptation phase training iterations for pole length td = 2. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
@@ -227,7 +227,7 @@ For pole length $$td = 2$$, all CARL versions cause catastrophic events in each 
 Figure 13 shows a comparison of cumulative catastrophic events. For a less OOD pole length, CARL State outperforms CARL Reward. Within CARL State versions, a higher $$\lambda_2$$ leads to more cautious behavior. CARL State learns to avoid catastrophe faster than CARL Reward (Fig 10). For pole length $$td = 1.5$$, within CARL Reward, the expected effect of less catastrophic events for more pessimistic versions was observed. For further OOD pole lengths, more caution does not help prevent catastrophic events for both CARL Reward and CARL State.
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/heat_cat.png" alt="Figure13">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/heat_cat.png" alt="Figure13">
   <figcaption>Figure 13. Cumulative catastrophic events over adaptation phase training iterations for all versions of CARL.</figcaption>
   </p>
 </figure>
@@ -238,16 +238,16 @@ For a further OOD pole length of $$td = 1.5$$, the last adaptation training iter
 
 <figure>
   <p style="text-align:center;">
-    <img src="https://M-Eberle.github.io/CARL/assets/docs/vids/adapt_reward_30_1_it0.gif" width="200" height="200">
-    <img src="https://M-Eberle.github.io/CARL/assets/docs/vids/adapt_state_2_1_it0.gif" width="200" height="200">
+    <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/vids/adapt_reward_30_1_it0.gif" width="200" height="200">
+    <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/vids/adapt_state_2_1_it0.gif" width="200" height="200">
   <figcaption>Figure 14. Comparing the behavior of CARL Reward (left) and CARL State (right) in the first adaptation iteration for pole length td = 1.</figcaption>
   </p>
 </figure>
 
 <figure>
   <p style="text-align:center;">
-    <img src="https://M-Eberle.github.io/CARL/assets/docs/vids/adapt_reward_30_1_5_it9.gif" width="200" height="200">
-    <img src="https://M-Eberle.github.io/CARL/assets/docs/vids/adapt_state_2_1_5_it9.gif" width="200" height="200">
+    <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/vids/adapt_reward_30_1_5_it9.gif" width="200" height="200">
+    <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/vids/adapt_state_2_1_5_it9.gif" width="200" height="200">
   <figcaption>Figure 15. Comparing the behavior of CARL Reward (left) and CARL State (right) in the last adaptation iteration for pole length td = 1.5.</figcaption>
   </p>
 </figure>
