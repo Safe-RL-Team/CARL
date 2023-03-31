@@ -207,7 +207,7 @@ For pole length $$td = 1.5$$, all CARL version cause a catastrophic event in eve
 <summary>Figure 11.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/cat1_5.png" alt="Figure11" class = "center">
+  <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/cat1.5.png" alt="Figure11" class = "center">
   <figcaption>Figure 11. Catastrophic events over adaptation phase training iterations for pole length td = 1.5. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
