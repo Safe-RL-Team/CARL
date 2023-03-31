@@ -20,14 +20,14 @@ date: 2023-03-31
 
 Safe Reinforcement Learning (Safe RL) is a field that spans diverse approaches to develop algorithms that maximize a return without failing or executing risky behavior (García and Fernández, 2015). This respectively implies avoiding catastrophic events or avoiding actions that lead to highly varying returns. Hence, safety can be implemented by various constraints posed on RL agents.
 Within the framework of Safety-Critical Adaptation (SCA), an RL agent learns to act in different sandbox environments in the pretraining phase before it is placed in a target environment in the adaptation phase. In the target environment, the agent acts 'cautious', meaning that even during its initial exploration, it will not only try to maximize the return, but also avoid catastrophic states (Zhang et al., 2020). SCA is inspired by human behavior: When driving a new car for the first time, we will for example be more cautious hitting the gas pedal. Nascent pilots who are trained in a flight simulator where they might be able to perform numerous stunts will refrain from looping the loop when flying a real plane for the first time.
-Zhang et al. (2020) transfer this idea to RL and propose Cautious Adaptation in Reinforcement Learning (CARL). They introduce two algorithms tackling different notions of safety. The first is based on Low Reward Risk-Aversion (CARL Reward) and the second on Catastrophic State Risk-Aversion (CARL State). In this blog post, I will set the approaches into context and provide results of expanded behavior for each CARL generated through the modification of parameters critical for adaptation. While Zhang et al. (2020) describe two of the adaptation parameters as caution (tuning) parameters, I argue that a third one directly controls the degree of caution exercised by CARL. The methodology is based on the work of Zhang et al. (2020) and the corresponding [code](https://github.com/jesbu1/carl). The marginally adapted code for this project can be found here](https://github.com/Safe-RL-Team/CARL-params).
+Zhang et al. (2020) transfer this idea to RL and propose Cautious Adaptation in Reinforcement Learning (CARL). They introduce two algorithms tackling different notions of safety. The first is based on Low Reward Risk-Aversion (CARL Reward) and the second on Catastrophic State Risk-Aversion (CARL State). In this blog post, I will set the approaches into context and provide results of expanded behavior for each CARL generated through the modification of parameters critical for adaptation. While Zhang et al. (2020) describe two of the adaptation parameters as caution (tuning) parameters, I argue that a third one directly controls the degree of caution exercised by CARL. The methodology is based on the work of Zhang et al. (2020) and the corresponding [code](https://github.com/jesbu1/carl). The marginally adapted code for this project can be found [here](https://github.com/Safe-RL-Team/CARL-params).
 
 # Context
 García and Fernández (2015) categorize the main tendencies in Safe RL. Apart from a direct modification of the exploration process, the second tendency is the modification of the optimization criterion. For CARL, the overall exploration process is modified since it relies on pretraining in several environments. However, the key idea for CARL is based on changing the optimization criterion from pretraining to adaptation (Fig. 2). CARL Reward can be classified as an approach with 'worst-case criterion under inherent uncertainty' since it only pays attention to the worst rewards of possible actions during adaptation. Hence, it is a pessimistic version of the optimization used for pretraining. This notion of safety suggests that a low reward is oftentimes corresponding to catastrophic actions. In contrast, the notion of safety for CARL State acknowledges that state safety and reward don’t necessarily go hand in hand. Therefore, the state safety is additionally learned during pretraining. During adaptation, the optimization criterion used in pretraining is complemented with the state safety. This corresponds to an approach with a 'risk-sensitive criterion based on the weighted sum of return and risk'.
 
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/context.png" alt="Figure1" class = "center">
+  <img src="https://M-Eberle.github.io/CARL/assets/docs/context.png" alt="Figure2" class = "center">
   <figcaption>Figure 2. Approaches for Safe RL (adapted: García and Fernández, 2015, p. 1440).</figcaption>
   </p>
 </figure>
@@ -118,7 +118,7 @@ During pretraining, a PETS agent is trained in several domains of the cartpole e
 <summary>Figure 3.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/pretrain_cat.png" alt="Figure1" class = "center">
+  <img src="https://M-Eberle.github.io/CARL/assets/docs/pretrain_cat.png" alt="Figure3" class = "center" width = "522" height = "394">
   <figcaption>Figure 3. Catastrophic events over pretraining phase training iterations.</figcaption>
   </p>
 </figure>
@@ -128,7 +128,7 @@ During pretraining, a PETS agent is trained in several domains of the cartpole e
 <summary>Figure 4.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/pretrain_r.png" alt="Figure1" class = "center">
+  <img src="https://M-Eberle.github.io/CARL/assets/docs/pretrain_r.png" alt="Figure4" class = "center" width = "522" height = "394">
   <figcaption>Figure 4. Returns over pretraining phase training iterations.</figcaption>
   </p>
 </figure>
@@ -154,7 +154,7 @@ For pole length $$td = 1$$, all CARL State versions achieve a higher reward than
 <summary>Figure 6.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/r1.png" alt="Figure1" class = "center">
+  <img src="https://M-Eberle.github.io/CARL/assets/docs/r1.png" alt="Figure6" class = "center">
   <figcaption>Figure 6. Returns over adaptation phase training iterations for pole length td = 1. Solid lines represent the maximum reward over iterations, dotted lines represent actual reward per iteration. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
@@ -165,7 +165,7 @@ For pole length $$td = 1.5$$, CARL Reward and CARL State start out with similar 
 <summary>Figure 7.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/r1_5.png" alt="Figure1" class = "center">
+  <img src="https://M-Eberle.github.io/CARL/assets/docs/r1_5.png" alt="Figure7" class = "center">
   <figcaption>Figure 7. Returns over adaptation phase training iterations for pole length td = 1.5. Solid lines represent the maximum reward over iterations, dotted lines represent actual reward per iteration. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
@@ -176,7 +176,7 @@ For pole length $$td = 2$$, all CARL Reward version start out with a lower rewar
 <summary>Figure 8.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/r2.png" alt="Figure1" class = "center">
+  <img src="https://M-Eberle.github.io/CARL/assets/docs/r2.png" alt="Figure8" class = "center">
   <figcaption>Figure 8. Returns over adaptation phase training iterations for pole length td = 2. Solid lines represent the maximum reward over iterations, dotted lines represent actual reward per iteration. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
@@ -185,7 +185,7 @@ For pole length $$td = 2$$, all CARL Reward version start out with a lower rewar
 Figure 9 shows an overall comparison of final maximum adaptation return for CARL versions. For a pole length $$td = 1$$, all versions show very high rewards. As expected, different caution parameters have a more different influence for further OOD pole lengths: For $$td = 1.5$$, within CARL Reward versions, the most cautious ($$\gamma = 70$$) has the highest return. For CARL State versions, all modifications of the original ($$\lambda_2 = 1$$) perform better than the original. Overall, higher $$\lambda_2$$ tend to have a higher return. For $$td = 2$$,  for CARL Reward and State, the most cautious versions ($$\gamma = 70$$ and $$\lambda_2 = 0.5$$) have the highest returns.
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/heat_r.png" alt="Figure1" class = "center">
+  <img src="https://M-Eberle.github.io/CARL/assets/docs/heat_r.png" alt="Figure9">
   <figcaption>Figure 9. Maximum return for the final training episode during adaptation phase for all versions of CARL.</figcaption>
   </p>
 </figure>
@@ -196,7 +196,7 @@ For pole length $$td = 1$$, all CARL Reward versions cause a catastrophic event 
 <summary>Figure 10.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/cat1.png" alt="Figure1" class = "center">
+  <img src="https://M-Eberle.github.io/CARL/assets/docs/cat1.png" alt="Figure10" class = "center">
   <figcaption>Figure 10. Catastrophic events over adaptation phase training iterations for pole length td = 1. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
@@ -207,7 +207,7 @@ For pole length $$td = 1.5$$, all CARL version cause a catastrophic event in eve
 <summary>Figure 11.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/cat1_5.png" alt="Figure1" class = "center">
+  <img src="https://M-Eberle.github.io/CARL/assets/docs/cat1_5.png" alt="Figure11" class = "center">
   <figcaption>Figure 11. Catastrophic events over adaptation phase training iterations for pole length td = 1.5. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
@@ -218,7 +218,7 @@ For pole length $$td = 2$$, all CARL versions cause catastrophic events in each 
 <summary>Figure 12.</summary>
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/cat2.png" alt="Figure1" class = "center">
+  <img src="https://M-Eberle.github.io/CARL/assets/docs/cat2.png" alt="Figure12" class = "center">
   <figcaption>Figure 12. Catastrophic events over adaptation phase training iterations for pole length td = 2. The numbers after 'reward' or 'state' determine the value of the caution parameter.</figcaption>
   </p>
 </figure>
@@ -227,7 +227,7 @@ For pole length $$td = 2$$, all CARL versions cause catastrophic events in each 
 Figure 13 shows a comparison of cumulative catastrophic events. For a less OOD pole length, CARL State outperforms CARL Reward. Within CARL State versions, a higher $$\lambda_2$$ leads to more cautious behavior. CARL State learns to avoid catastrophe faster than CARL Reward (Fig 10). For pole length $$td = 1.5$$, within CARL Reward, the expected effect of less catastrophic events for more pessimistic versions was observed. For further OOD pole lengths, more caution does not help prevent catastrophic events for both CARL Reward and CARL State.
 <figure>
   <p style="text-align:center;">
-  <img src="https://M-Eberle.github.io/CARL/assets/docs/heat_cat.png" alt="Figure1" class = "center">
+  <img src="https://M-Eberle.github.io/CARL/assets/docs/heat_cat.png" alt="Figure13">
   <figcaption>Figure 13. Cumulative catastrophic events over adaptation phase training iterations for all versions of CARL.</figcaption>
   </p>
 </figure>
