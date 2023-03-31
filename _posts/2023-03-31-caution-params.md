@@ -184,10 +184,8 @@ For pole length $$td = 2$$, all CARL Reward version start out with a lower rewar
 
 Figure 9 shows an overall comparison of final maximum adaptation return for CARL versions. For a pole length $$td = 1$$, all versions show very high rewards. As expected, different caution parameters have a more different influence for further OOD pole lengths: For $$td = 1.5$$, within CARL Reward versions, the most cautious ($$\gamma = 70$$) has the highest return. For CARL State versions, all modifications of the original ($$\lambda_2 = 1$$) perform better than the original. Overall, higher $$\lambda_2$$ tend to have a higher return. For $$td = 2$$,  for CARL Reward and State, the most cautious versions ($$\gamma = 70$$ and $$\lambda_2 = 0.5$$) have the highest returns.
 <figure>
-  <p style="text-align:center;">
   <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/heat_r.png" alt="Figure9">
   <figcaption>Figure 9. Maximum return for the final training episode during adaptation phase for all versions of CARL.</figcaption>
-  </p>
 </figure>
 
 #### Catastrophic Events
@@ -226,10 +224,8 @@ For pole length $$td = 2$$, all CARL versions cause catastrophic events in each 
 
 Figure 13 shows a comparison of cumulative catastrophic events. For a less OOD pole length, CARL State outperforms CARL Reward. Within CARL State versions, a higher $$\lambda_2$$ leads to more cautious behavior. CARL State learns to avoid catastrophe faster than CARL Reward (Fig 10). For pole length $$td = 1.5$$, within CARL Reward, the expected effect of less catastrophic events for more pessimistic versions was observed. For further OOD pole lengths, more caution does not help prevent catastrophic events for both CARL Reward and CARL State.
 <figure>
-  <p style="text-align:center;">
   <img src="https://Safe-RL-Team.github.io/CARL/assets/docs/heat_cat.png" alt="Figure13">
   <figcaption>Figure 13. Cumulative catastrophic events over adaptation phase training iterations for all versions of CARL.</figcaption>
-  </p>
 </figure>
 
 
